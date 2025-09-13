@@ -13,6 +13,9 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  expect: {
+    timeout: 5000, // 5 секунд - таймаут для expect assertions
+  },
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
