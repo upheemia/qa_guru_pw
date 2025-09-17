@@ -39,7 +39,7 @@ test.describe('Профиль', () => {
     await page.goto(URL_PROFILE);
     await profilePage.favoritedArticle(article);
     
-    await expect(profilePage.nameArticle).toContainText(article.title); //НЕ УСПЕВАЕТ ЗАГРУЗИТЬСЯ, ТАЙМАУТ НЕ РАБОТАЕТ, НИ ЛОКАЛЬНЫЙ НИ В КОНФИГЕ
+    await expect(profilePage.getArticleByTitle(article.title)).toContainText(article.title);
   });
 })
 
