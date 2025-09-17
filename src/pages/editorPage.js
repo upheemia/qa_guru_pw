@@ -11,8 +11,6 @@ export class EditorPage {
         this.editButton = page.getByRole('button').filter({hasText : ' Edit Article'}).first();
         this.updateButton = page.getByRole('button', { name: 'Update Article' });
         this.deleteArticleButton = page.getByRole('button').filter({hasText : ' Delete Article'}).first();
-        this.press = page.keyboard.press('Enter');
-
     }
 
     async createNewArticle(article) {
