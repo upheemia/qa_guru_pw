@@ -2,6 +2,7 @@ import { title } from "process";
 
 export class EditorPage {
     constructor(page) {
+        this.page = page;
         this.createArticleTitle = page.getByRole('textbox', { name: 'Article Title' });
         this.createArticleDescription = page.getByRole('textbox', { name: 'What\'s this article about?' });
         this.createArticleText = page.getByRole('textbox', { name: 'Write your article (in' });
@@ -11,7 +12,6 @@ export class EditorPage {
         this.updateButton = page.getByRole('button', { name: 'Update Article' });
         this.deleteArticleButton = page.getByRole('button').filter({hasText : ' Delete Article'}).first();
         this.press = page.keyboard.press('Enter');
-        //this.deleteArticleButton = page.locator('.article-actions').filter({hasText : ' Delete Article'});
 
     }
 
@@ -25,6 +25,12 @@ export class EditorPage {
     }
 
     async deleteArticle() {
+
+        this.page.once('dialog', dialog => {
+        console.log(`Dialog message: ${dialog.message()}`);
+        dialog.accept();
+        });
+
         await this.deleteArticleButton.click();
     }
 

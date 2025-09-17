@@ -5,8 +5,6 @@ export class MainPage {
         this.navigationBar = page.getByRole('navigation');
         this.yourFeedButton = page.getByRole('button', { hasText: 'Your Feed' });
         this.messageText = page.getByText('Articles not available.');
-        //this.globalFeedButton = page.getByRole('button', { name: 'Global Feed' });
-        //this.tagsButton = page.getByRole('button', { name: 'реклама' });
         this.newArticleButton = page.getByRole('link').filter({ hasText: 'New Article' });
 
     }

@@ -39,7 +39,7 @@ test.describe('Посты', () => {
 
     await expect(editorPage.articleTitle).toContainText(article.title);
   });
-//не работает тест, потому что падает "нажать на энтер" КАК ЭТО СДЕЛАТЬ???
+  
   test('Удаление поста', async ({ page }) => {
    
     const article = {
@@ -53,12 +53,11 @@ test.describe('Посты', () => {
     
     await editorPage.createNewArticle(article);
 
-    //await expect(editorPage.articleTitle).toContainText(article.title);
+    await expect(editorPage.articleTitle).toContainText(article.title);
 
     await editorPage.deleteArticle();
-    await page.press('Enter');
 
-    //await expect(mainPage.messageText).toContainText('Articles not available.');
+    await expect(mainPage.messageText).toContainText('Articles not available.');
   });
   
 

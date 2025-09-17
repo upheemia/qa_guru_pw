@@ -1,6 +1,5 @@
 export class ProfilePage {
     constructor(page) {
-        //this.nameHeading = page.getByRole('heading');
         this.myArticlesLink = page.getByRole('link', { name: 'My Articles' });
         this.favoritedArticlesLink = page.getByRole('link', { name: 'Favorited Articles' });
         this.favoritedButton = page.getByRole('button').first();
